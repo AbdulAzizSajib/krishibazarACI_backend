@@ -28,12 +28,12 @@ async function run() {
   const cartCollection = client.db("aciKrisibazar").collection("carts");
   try {
     await client.connect();
-    //! Get Data From Database
+    //! Get Data From Database 1
     app.get("/products", async (req, res) => {
       const result = await productsCollection.find().toArray();
       res.send(result);
     });
-    //! Cart post
+    //! Cart post 2
     app.post("/carts", async (req, res) => {
       const cartItem = req.body;
       const result = await cartCollection.insertOne(cartItem);
